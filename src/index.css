@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-mousse: #2E4036;
+    --color-argile: #CC5833;
+    --color-creme: #F2F0E9;
+    --color-charbon: #1A1A1A;
+  }
+
+  html {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #F2F0E9;
+    color: #1A1A1A;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Typography Utility Classes */
+.font-editorial {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-data {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.tracking-tight-custom {
+  letter-spacing: -0.035em;
+}
+
+/* Magnetic Button Feel & Micro-interactions */
+.btn-magnetic {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.35s ease;
+  will-change: transform;
+}
+
+.btn-magnetic:hover {
+  transform: scale(1.03);
+}
+
+.btn-magnetic:active {
+  transform: scale(0.98);
+}
+
+/* Sliding Background Layer for Buttons */
+.btn-slide-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(101%);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 0;
+}
+
+.btn-magnetic:hover .btn-slide-bg {
+  transform: translateY(0%);
+}
+
+.btn-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Interactive link lift */
+.interactive-lift {
+  transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94), color 0.2s ease;
+}
+
+.interactive-lift:hover {
+  transform: translateY(-1px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #EAE7DD;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2E4036;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #CC5833;
+}
